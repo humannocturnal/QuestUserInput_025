@@ -1,7 +1,10 @@
 package com.example.questuserinput_025
 
+import android.R.attr.bottom
 import android.R.attr.label
 import android.R.attr.text
+import android.R.attr.thickness
+import android.graphics.Color
 import android.graphics.Paint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -21,6 +24,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.VerticalAlignmentLine
+import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -82,6 +87,13 @@ fun FormDataDiri(modifier: Modifier
             }
         )
 
+        Devider(
+            modifier = Modifier.padding(bottom = dimensionResource(R.dimen.padding_medium), top = dimensionResource(
+                id = R.dimen.padding_medium
+            )),
+            thickness = dimensionResource(R.dimen.divider_tipis),
+            color = Color.DKGRAY
+        )
     }
 }
 
