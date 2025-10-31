@@ -1,5 +1,6 @@
 package com.example.questuserinput_025
 
+import android.R.attr.label
 import android.R.attr.text
 import android.graphics.Paint
 import androidx.compose.foundation.layout.Arrangement
@@ -69,6 +70,18 @@ fun FormDataDiri(modifier: Modifier
                 }
             }
         }
+        OutlinedTextField(
+            value = textAlamat,
+            singleLine = true,
+            modifier = Modifier.width(250.dp),
+
+            label = { Text(text = "Alamat Lengkap")},
+
+            OnValueChange = {
+                textAlamat = it
+            }
+        )
+
     }
 }
 
