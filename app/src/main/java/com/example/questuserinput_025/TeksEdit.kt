@@ -1,17 +1,15 @@
 package com.example.questuserinput_025
 
-import android.R.attr.bottom
-import android.R.attr.label
-import android.R.attr.text
-import android.R.attr.thickness
-import android.graphics.Color
-import android.graphics.Paint
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
+import androidx.compose.material3.Button
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
@@ -23,8 +21,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.VerticalAlignmentLine
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
@@ -78,22 +78,37 @@ fun FormDataDiri(modifier: Modifier
         OutlinedTextField(
             value = textAlamat,
             singleLine = true,
-            modifier = Modifier.width(250.dp),
+            shape = MaterialTheme.shapes.large,
+            modifier = Modifier.width(350.dp),
 
-            label = { Text(text = "Alamat Lengkap")},
+            label = { Text(text = " Alamat") },
 
-            OnValueChange = {
+            onValueChange = {
                 textAlamat = it
             }
         )
 
-        Devider(
+
+        HorizontalDivider(
             modifier = Modifier.padding(bottom = dimensionResource(R.dimen.padding_medium), top = dimensionResource(
                 id = R.dimen.padding_medium
             )),
             thickness = dimensionResource(R.dimen.divider_tipis),
-            color = Color.DKGRAY
+            color = Color.DarkGray
         )
+
+        Button(
+            modifier = Modifier.fillMaxWidth(1f),
+            enabled = textAlamat.isNotEmpty(),
+
+            onClick = {
+               nama=textNama
+               jenis=textJK
+                alamat=textAlamat
+            }
+        ) {
+            Text(stringResource(R.string.submit))
+        }
     }
 }
 
