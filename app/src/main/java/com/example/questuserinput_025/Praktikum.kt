@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
@@ -26,6 +27,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -137,6 +139,19 @@ fun Praktikum (modifier: Modifier
                         textAlamat = it
                     }
                 )
+                Button (
+                    modifier = Modifier.fillMaxWidth(1f),
+                    enabled = textAlamat.isNotEmpty(),
+
+                    onClick = {
+                        nama=textNama
+                        jenis=textJK
+                        status=textstatus
+                        alamat=textAlamat
+                    }
+                ) {
+                    Text(stringResource(R.string.submit))
+                }
             }
         }
     }
