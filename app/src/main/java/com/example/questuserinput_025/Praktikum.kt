@@ -123,7 +123,20 @@ fun Praktikum (modifier: Modifier
                         }
                     }
                 }
-                
+                Text("ALAMAT",
+                )
+                OutlinedTextField(
+                    value = textAlamat,
+                    singleLine = true,
+                    shape = MaterialTheme.shapes.large,
+                    modifier = Modifier.width(350.dp),
+
+                    placeholder = { Text(text = "Alamat") },
+
+                    onValueChange = {
+                        textAlamat = it
+                    }
+                )
             }
         }
     }
