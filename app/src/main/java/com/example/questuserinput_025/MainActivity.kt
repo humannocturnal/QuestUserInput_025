@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             QuestUserInput_025Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    FormDataDiri(
+                    Praktikum(
                         modifier = Modifier.padding(innerPadding) // hormati insets Scaffold
                     )
                 }

@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -12,6 +13,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
@@ -151,6 +154,27 @@ fun Praktikum (modifier: Modifier
                     }
                 ) {
                     Text(stringResource(R.string.submit))
+                }
+            }
+        }
+        Column(modifier = Modifier.fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            ElevatedCard (
+                elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = colorResource(id = R.color.white)
+                ),
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(start = 10.dp, end = 10.dp, bottom = 10.dp)
+            ){
+                Column (modifier = Modifier.padding(horizontal = 10.dp, vertical = 15.dp),){
+                    Text(text = "NAMA : "+nama, color = Color.Black, fontWeight = FontWeight.Bold)
+                    Text(text = "JENIS KELAMIN : "+jenis, color = Color.Black, fontWeight = FontWeight.Bold)
+                    Text(text = "STATUS PERKAWINAN : "+status ,color = Color.Black, fontWeight = FontWeight.Bold)
+                    Text(text = "ALAMAT : "+alamat, color = Color.Black, fontWeight = FontWeight.Bold)
+
                 }
             }
         }
