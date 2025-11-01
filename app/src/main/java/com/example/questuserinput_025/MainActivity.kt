@@ -20,9 +20,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             QuestUserInput_025Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+                    FormDataDiri(
+                        modifier = Modifier.padding(innerPadding) // hormati insets Scaffold
                     )
                 }
             }
