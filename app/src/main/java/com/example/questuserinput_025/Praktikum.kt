@@ -105,7 +105,33 @@ fun Praktikum (modifier: Modifier
                         }
                     }
                 }
+                Text("STATUS PERKAWINAN")
+                Column {
+                    statusoption.forEach { item ->
+                        Row(modifier = Modifier.selectable(
+                            selected = textstatus == item,
+
+                            onClick = { textstatus = item}
+                        ), verticalAlignment = Alignment.CenterVertically){
+                            RadioButton(
+                                selected = textstatus == item,
+
+                                onClick = {
+                                    textstatus = item
+                                })
+                            Text(item)
+                        }
+                    }
+                }
+                
             }
         }
     }
 }
+
+
+
+
+
+
+
