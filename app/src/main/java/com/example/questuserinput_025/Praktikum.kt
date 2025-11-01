@@ -1,14 +1,19 @@
 package com.example.questuserinput_025
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.unit.dp
 
 @Composable
 fun Praktikum (modifier: Modifier
@@ -28,6 +33,12 @@ fun Praktikum (modifier: Modifier
 
     Column (modifier = Modifier.background(colorResource(id = R.color.gray))
     ){
+        Box(Modifier.fillMaxWidth()
+            .height(height = 100.dp)
+            .background(colorResource(id = R.color.purlple)),
+            contentAlignment = Alignment.BottomStart
+        ){
 
+        }
     }
 }
