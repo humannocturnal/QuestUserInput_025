@@ -1,12 +1,16 @@
 package com.example.questuserinput_025
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -62,7 +66,26 @@ fun Praktikum (modifier: Modifier
             .height(600.dp)
             .background(Color.White))
         {
+            Column (modifier = Modifier
+                .padding(15.dp),
+                verticalArrangement = Arrangement.spacedBy(10.dp))
+            {
+                Text("NAMA LENGKAP",
+                )
+                OutlinedTextField(
+                    value = textNama,
+                    singleLine = true,
+                    shape = MaterialTheme.shapes.large,
+                    modifier = Modifier.width(350.dp),
 
+                    placeholder = { Text(text = "Isian Nama Lengkap") },
+
+                    onValueChange = {
+                        textNama = it
+                    }
+                )
+                
+            }
         }
     }
 }
